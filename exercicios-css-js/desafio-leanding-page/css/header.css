@@ -1,0 +1,108 @@
+.cabecalho{
+    height: 100vh;
+    background-image: linear-gradient(#3c2a38, #17161c);
+    padding: 0 10px;
+}
+.logo{
+    position: relative;
+}
+.logo img{
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+.fale-conosco{
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 30%;
+}
+ .fale-conosco a{
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.menu-hamburguer{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+.menu-hamburguer li{
+    list-style: none;
+    width: 40px;
+    height: 3px;
+    margin: .3rem;
+    background-color: var(--cor-branca-destaque);
+    border-radius: 3px;
+}
+.menu-hamburguer li:nth-child(3){
+    width: 30px;
+    margin-left: 15px;
+}
+.menu-navegacao{
+    position: absolute;
+    top: 0;
+    right: -230px;
+    width: 230px;
+    background-color: #17161c;
+    padding: 2rem 1rem 1rem 1rem;
+    border-bottom-left-radius: 5px;
+    transition: .5s ease-in;
+}
+.exibe-menu{
+    right: 0;
+}
+.menu-navegacao a{
+    margin: 2rem 0;
+    display: block;
+    font-size: 1.2rem;
+    color: var(--cor-branca-destaque);
+}
+.cabecalho-apresentacao{
+    padding-top: 100px;
+    color: var(--cor-branca-destaque);
+}
+.cabecalho-apresentacao h2{
+    margin: 1rem 0;
+    font-size: 2rem;
+}
+.cabecalho-apresentacao p:nth-child(3){
+    font-size: 1.3rem;
+}
+.download-app{
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+.download-app div{
+    position: relative;
+    font-size: 1rem;
+    line-height: 20px;
+    flex-basis: 170px;
+    height: auto;
+    margin-top: 2rem;
+    padding: .5rem 1rem;
+    background-color: var(--cor-branca-destaque);
+    border-radius: 8px;
+}
+.download-app div:nth-child(2){
+    margin-left: 1rem;
+}
+.download-app div img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+}
+.download-app p{
+    margin-left: 2.4rem;
+    color: #000;
+}
+.download-app p > span{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
