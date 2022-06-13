@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP PARA FICHEIROS</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<h1>FICHEIRO</h1>
+
+<div class="container">
+
+<form action="" class="novo-ficheiro" id="adicionar-ficheiro">
+
+    <div class="group-conten">
+    
+    <label>Escolha uma Categoria <br>
+    <select class="categoria-ficheiro" name="categoria" id="categoria">
+        <option value="religiao">Religião</option>
+        <option value="pedagogia">Pedagogia</option>
+        <option value="literatura">Literatura</option>
+        <option value="ciência">Ciência</option>
+        <option value="politica">Política</option>
+        <option value="arte">Arte</option>
+    </select></label>
+
+    <input class="titulo-ficheiro" type="text" name="titulo" id="titulo"  placeholder="Título">
+
+    <textarea class="texto-ficheiro" name="texto" id="texto" cols="30" rows="10" placeholder="Escreva ou cole um texto...">
+    </textarea>
+
+    <input type="url" name="url" id="url" placeholder="Cole um link de referência">
+
+    </div>
+
+    <div class="group-conten">
+
+    <input type="file" name="arquivo" id="arquivo">
+    <input type="date" name="data" id="data">
+    <input type="reset" value="Limpar Tudo">
+    
+    </div>
+     
+    <div class="button-add">
+        <button type="submit" id="adicionar">Adicionar Ficheiro</button>
+    </div>
+    
+</form>
+
+<hr>
+
+<div class="ficheiro">
+</div>
+
+</div>
+
+<script src="js/add-ficheiro.js"></script>
+</body>
+</html>

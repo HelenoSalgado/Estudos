@@ -1,0 +1,70 @@
+html{
+    font-size: 16px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: rgb(221, 232, 235);
+}
+body h1{
+    margin: 0;
+    text-align: center;
+    background-color: rgb(29, 29, 29);
+    color: #fff;
+}
+label, input, textarea, button, select{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+}
+div.container{
+    max-width: 800px;
+    margin: auto;
+}
+.novo-ficheiro{
+    margin: 4rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.group-conten{
+    flex: 1 1 250px;
+}
+.categoria-ficheiro{
+    display: block;
+    width: 100px;
+    cursor: pointer;
+}
+.titulo-ficheiro{
+    display: block;
+    width: fit-content;
+}
+form input{
+    padding: .2rem;
+}
+.texto-ficheiro{
+    display: block;
+    min-width: 300px;
+    min-height: 200px;
+}
+.button-add{
+    width: 100%;
+    text-align: center;
+}
+.button-add button{
+    padding: .5rem;
+    margin-top: 3rem;
+}
+.ficheiro button{
+    display: none;
+}
+.ficheiro-visivel{
+    margin: 7rem auto;
+    padding: .5rem;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+}
+.ficheiro-visivel em, p{
+    font-size: 1.2rem;
+}

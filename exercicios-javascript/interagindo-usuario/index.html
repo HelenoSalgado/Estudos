@@ -4,69 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
     <title>Interagindo com o Usuário</title>
-
-    <style>
-        section{
-            background-color: blueviolet;
-            color: #fff;
-            padding: .5rem;
-            max-width: 800px;
-            border-radius: 5px;
-            margin: auto;
-        }
-        section > p input[type="number"], input[type="text"]{
-            max-width: 50px;
-            border: none;
-            border-radius: 3px;
-        }
-        section div{
-            position: relative;
-            max-width: 500px;
-            height: 80px;
-            background-color: blue;
-            padding-left: .2rem;
-            border-radius: 3px;
-            overflow-x: hidden;
-        }
-        section div > p#resposta{
-            position: absolute;
-            top: 0%;
-            transform: translateY(-30%);
-        }
-        section > p input[type="button"]{
-            width: 100px;
-            background-color: blue;
-            color: #fff;
-            padding: .5rem;
-            font-weight: bold;
-            border: 2px solid #eee;
-            border-radius: 7px;
-            transition: .3s ease-in;
-        }
-        p input[type="button"]:hover{
-            border: 2px solid rgb(247, 222, 6);
-        }
-        em{
-            font-size: small;
-            color: yellow;
-        }
-
-    </style>
 </head>
 <body>
 
 <section>
     <h1>Será que você pode dirigir?</h1>
-
-    <p>
+    <form action="">
+    <p>&#187;
     Qual é a sua idade:
-    <input type="number" name="texidade" id="texidade"> anos
+    <input type="number" name="inputIdade" id="inputIdade"> anos
     </p>
 
-    <p>
+    <p>&#187;
     Você tem carteira de motorista S/N?
-    <input type="text" name="temcarteira" id="temcarteira">
+    <input type="text" name="inputCarteira" id="inputCarteira">
     </p>
 
     <div>
@@ -76,30 +29,11 @@
     <p>
     <input type="button" value="Verificar" onclick="calcular()">
     </p>
-
+    </form>
     <em>*Recarregue a página para novo teste</em>
 
 </section>
 
-    
-
-    <script>
-
-        function calcular(){
-             
-            // Parece que não é necessário o document.querySelector quando o conversor de valor é usado para o id.
-           
-            var idade = Number(texidade.value);
-            var temCarteira = String(temcarteira.value); 
-
-            
-            if (idade > 17 && temCarteira == "S"){
-                resposta.innerHTML += ("<p>você pode <strong>DIRIGIR</strong> pois tem a idade permitida e tem <strong>carteira de motorista</strong>.");
-            }else
-                resposta.innerHTML += ("<p><strong>VOCÊ NÃO PODE DIRIGIR</strong>.</p>");
-        }
-        
-    </script>
-
+<script src="js/calcula.js"></script>
 </body>
 </html>
