@@ -31,9 +31,36 @@ curtidas.addEventListener("click", () =>{
     postLike();
 })
 
+// async function postLike(){
+//     fetch("https://orarelabutar.com/php/increment-likes.php", {
+//       method: "POST",
+//       body: JSON.stringify(data)
+//     })
+// }
+//async function postLike(){
+//fetch("https://orarelabutar.com/php/increment-likes.php", {
+    //method: "POST",
+    //mode: "same-origin",
+    //credentials: "same-origin",
+    //headers: {
+      //"Content-Type": "application/json"
+    //},
+    //body: JSON.stringify(data)
+  //})
+//}
+
 async function postLike(){
-    fetch("https://orarelabutar.com/php/increment-likes.php", {
-      method: "POST",
-      body: JSON.stringify(data)
-    })
+let response = await fetch('https://orarelabutar.com/php/increment-likes.php', {
+    method: 'POST',
+    mode: "no-cors",
+    credentials: "same-origin",
+    //crossDomain: true,
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(data)
+  });
+  
+  let result = await response.json();
+  alert(result.message);
 }
