@@ -30,7 +30,7 @@ curtidas.addEventListener("click", () =>{
 
 async function postLike(){
 
-fetch("http://botao-de-curtir.atwebpages.com/php/increment-likes.php", {
+fetch("./php/increment-likes.php", {
     method: "POST",
     mode: "no-cors",
     headers: {
