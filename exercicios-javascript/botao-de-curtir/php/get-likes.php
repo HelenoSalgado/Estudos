@@ -7,7 +7,7 @@ header('Access-Control-Allow-Methods: GET, POST');
 header("Access-Control-Allow-Headers: X-Requested-With");
 
 try {
-  $result = $PDO->query("SELECT nameColum FROM nameTable WHERE id = 0;");
+  $result = $PDO->query("SELECT dbname.nameTable FROM nameTable WHERE id = 0;");
 
   if ($result) {
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);

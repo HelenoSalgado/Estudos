@@ -24,43 +24,21 @@ curtidas.addEventListener("click", () =>{
         curtidasTotal--;
     }
     mostra.innerText = like;
-    data = {
-      id: '1',
-      curtidas: like
-    }
+    
     postLike();
 })
 
-// async function postLike(){
-//     fetch("https://orarelabutar.com/php/increment-likes.php", {
-//       method: "POST",
-//       body: JSON.stringify(data)
-//     })
-// }
-//async function postLike(){
-//fetch("https://orarelabutar.com/php/increment-likes.php", {
-    //method: "POST",
-    //mode: "same-origin",
-    //credentials: "same-origin",
-    //headers: {
-      //"Content-Type": "application/json"
-    //},
-    //body: JSON.stringify(data)
-  //})
-//}
-
 async function postLike(){
-let response = await fetch('https://orarelabutar.com/php/increment-likes.php', {
-    method: 'POST',
+
+fetch("http://botao-de-curtir.atwebpages.com/php/increment-likes.php", {
+    method: "POST",
     mode: "no-cors",
-    credentials: "same-origin",
-    //crossDomain: true,
     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
+      "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: JSON.stringify(data)
-  });
-  
-  let result = await response.json();
-  alert(result.message);
+    body: like
+  })
+  .then(res => res.json()) 
+  //.then(response => console.log('Success:', JSON.stringify(response)))
+  //.catch(error => console.error('Error:',error))
 }
