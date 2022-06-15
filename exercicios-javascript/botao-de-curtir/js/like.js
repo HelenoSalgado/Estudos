@@ -7,7 +7,7 @@ if(localStorage.curtidas == undefined){
 }
 
 async function getLikes(){
-    let response = await fetch("https://orarelabutar.com/php/get-likes.php");
+    let response = await fetch("https://heleno.epizy.com/php/get-likes.php");
     var data = await response.json();
     mostra.innerText = data.curtidas;
 }getLikes();
@@ -30,7 +30,7 @@ curtidas.addEventListener("click", () =>{
 
 async function postLike(){
 
-fetch("./php/increment-likes.php", {
+fetch("https://heleno.epizy.com/php/increment-likes.php", {
     method: "POST",
     mode: "no-cors",
     headers: {
