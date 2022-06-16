@@ -1,5 +1,6 @@
 let mostra = document.querySelector('#mostra');
 let curtidas = document.querySelector('.curtir');
+let pulsar = document.querySelector('.curtir img')
 let curtidasTotal;
 
 if(localStorage.curtidas == undefined){
@@ -23,7 +24,11 @@ curtidas.addEventListener("click", () =>{
         like = -1 + Number(mostra.textContent);
         curtidasTotal--;
     }
-    mostra.innerText = like;
+    pulsar.style.animationName = "pulsar"; 
+    setTimeout(() => {
+        mostra.innerText = like;
+        pulsar.style.animationName = "";
+    }, 1000);
     
     postLike();
 })
