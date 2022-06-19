@@ -8,7 +8,7 @@ if(localStorage.curtidas == undefined){
 }
 
 async function getLikes(){
-    let response = await fetch("botao-de-curtir.atwebpages.com/php/get-likes.php");
+    let response = await fetch("http://botao-de-curtir.atwebpages.com/php/get-likes.php");
     var data = await response.json();
     mostra.innerText = data.curtidas;
 }getLikes();
@@ -35,7 +35,7 @@ curtidas.addEventListener("click", () =>{
 
 async function postLike(){
 
-fetch("botao-de-curtir.atwebpages/php/increment-likes.php", {
+fetch("http://botao-de-curtir.atwebpages.com/php/increment-likes.php", {
     method: "POST",
     mode: "no-cors",
     headers: {
