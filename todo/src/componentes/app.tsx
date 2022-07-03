@@ -1,9 +1,12 @@
 import React from 'react';
+import Navbar from './navbar';
+import TodoList from './todoList';
 
 const App = () => {
     return (
      <div>
-         <h1>Meu Primeiro App em React</h1>
+         <Navbar></Navbar>
+         <TodoList></TodoList>
      </div>
     );
 }
