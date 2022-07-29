@@ -7,7 +7,7 @@ if(localStorage.curtidas == undefined){
     localStorage.curtidas = 0;
 }
 
-async function getLikes(){
+function getLikes(){
     let response = await fetch("http://botao-de-curtir.atwebpages.com/php/get-likes.php");
     var data = await response.json();
     mostra.innerText = data.curtidas;
