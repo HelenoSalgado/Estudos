@@ -1,23 +1,19 @@
 package contabank.heranca;
 
-// Através da palavra chava "extends" é possível fazer com que a class Gerente herde todas as características da class Funcionário.
+// Através da palavra chava "extends" é possível fazer com que a class Gerente herde todas as características da class Funcionário. E através da palavra chave "implementes" essa mesma class asina um contrato com a interface Autenticavel.
 
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario implements Autenticavel{
 
-    private int senha;
-
-    public void setSenha(int senha) {
-      this.senha = senha;
+    private AutenticacaoMetodos acesso = new AutenticacaoMetodos();
+    
+    @Override
+    public Boolean autentica(int senha) {
+       return this.acesso.autentica(senha);
     }
 
-    public Boolean autentica(int senha) {
-
-      if (senha == this.senha) {
-        return true;
-      } else {
-        return false;
-      }
-
+    @Override
+    public void setSenha(int senha) {
+      this.acesso.setSenha(senha);
     }
 
     public double bonificacao() {
