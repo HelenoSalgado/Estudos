@@ -1,11 +1,23 @@
 package contabank;
 
-public class Conta {
+public abstract class Conta {
 
     private double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
+    private static int total;
+
+    // Construtor: valores iniciais obrigatórios para inicialização do objeto.
+
+
+    public Conta(int agencia, int numero) {
+
+      this.agencia = agencia;
+      this.numero = numero;
+      Conta.total++;
+
+    }
 
     public void deposita(double valor) {
 
@@ -54,11 +66,11 @@ public class Conta {
 
     }
 
-    public void setNumero(int numero) {
+    // public void setNumero(int numero) {
 
-      this.numero = numero;
+    //   this.numero = numero;
 
-    }
+    // }
 
     public int getAgencia() {
 
@@ -66,11 +78,11 @@ public class Conta {
 
     }
 
-    public void setAgencia(int agencia) {
+    // public void setAgencia(int agencia) {
 
-      this.agencia = agencia;
+    //   this.agencia = agencia;
 
-    }
+    // }
 
     public Cliente getTitular() {
 
@@ -81,6 +93,12 @@ public class Conta {
     public void setTitular(Cliente titular) {
 
       this.titular = titular;
+
+    }
+
+    public static int getTotal() {
+
+      return Conta.total;
 
     }
 

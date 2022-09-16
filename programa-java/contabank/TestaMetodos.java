@@ -4,8 +4,8 @@ public class TestaMetodos {
 
   public static void main(String[] args) {
     
-    Conta contaDoPaulo = new Conta();
-    Conta contaDaMarcia = new Conta();
+    Conta contaDoPaulo = new ContaCorrente(10100, 112030449);
+    Conta contaDaMarcia = new ContaPoupanca(10100, 112030449);
 
     contaDoPaulo.deposita(100);
 
