@@ -1,5 +1,7 @@
 package contabank;
 
+import contabank.heranca.excecoes.SaldoInsuficiente;
+
 public class CriaConta {
 
   public static void main(String[] args) {
@@ -25,7 +27,19 @@ public class CriaConta {
     // Deposito
 
     contaDoHeleno.deposita(500);
-    contaDoHeleno.saca(100);
+    
+    // Pode ocorrer um erro de saldo insuficiente
+
+    try {
+
+      contaDoHeleno.saca(2600);
+
+    } catch (SaldoInsuficiente e) {
+      
+      System.out.println(e.getMessage());
+      
+    }
+    
     contaDoHeleno.transfere(1000, contaDaMaria);
 
     // Informações do titular

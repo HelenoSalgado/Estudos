@@ -1,5 +1,7 @@
 package contabank;
 
+import contabank.heranca.excecoes.SaldoInsuficiente;
+
 public abstract class Conta {
 
     private double saldo;
@@ -25,32 +27,22 @@ public abstract class Conta {
       
     }
 
-    public boolean saca(double valor) {
+    public void saca(double valor) {
 
-      if (this.saldo >= valor) {
-
-        this.saldo = this.saldo - valor;
-        return true;
+      if (this.saldo < valor) {
         
-      } else {
-
-        return false;
-
+        throw new SaldoInsuficiente("Saldo insuficiente: " + saldo);
+        
       }
+
+      this.saldo = this.saldo - valor;
+    
     }
 
-    public boolean transfere( double valor, Conta destino) {
+    public void transfere( double valor, Conta destino) {
 
-      if (this.saldo >= valor) {
-
-        this.saldo -= valor;
+        this.saca(valor);
         destino.deposita(valor);
-
-        return true;
-
-      }
-
-      return false;
 
     }
 

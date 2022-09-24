@@ -11,15 +11,15 @@ public class TestaMetodos {
 
     contaDoPaulo.saca(20);
 
-    if (contaDoPaulo.transfere(50, contaDaMarcia)) {
+    contaDoPaulo.transfere(50, contaDaMarcia);
 
-      System.out.println("Transferência realizada com sucesso");
+    System.out.println("Transferência realizada com sucesso");
 
-    } else {
+  
 
-      System.out.println("Valor insuficiente.");
+      //System.out.println("Valor insuficiente.");
       
-    }
+
 
 
     System.out.println(contaDoPaulo.getSaldo());
