@@ -1,6 +1,17 @@
-package contabank;
+package contabank.modelos;
+
+/**
+ * @author Heleno Salgado
+ * @version 1.0
+ */
 
 import contabank.heranca.excecoes.SaldoInsuficiente;
+
+/**
+* Construtor para inicializar o objeto Conta a partir da agencia e numero
+* @param agencia
+* @param numero
+*/
 
 public abstract class Conta {
 
@@ -26,6 +37,12 @@ public abstract class Conta {
       this.saldo += valor;
       
     }
+
+    /**
+    * Valor precisa ser menor ou igual ao saldo
+    * @param valor 
+    * @throws SaldoInsuficienteException
+    */
 
     public void saca(double valor) {
 
@@ -92,6 +109,22 @@ public abstract class Conta {
 
       return Conta.total;
 
+    }
+
+    public void setSaldo(double saldo) {
+      this.saldo = saldo;
+    }
+
+    public void setAgencia(int agencia) {
+      this.agencia = agencia;
+    }
+
+    public void setNumero(int numero) {
+      this.numero = numero;
+    }
+
+    public static void setTotal(int total) {
+      Conta.total = total;
     }
 
 }

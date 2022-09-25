@@ -1,6 +1,8 @@
-package contabank;
+package contabank.contas;
 
 import contabank.heranca.excecoes.SaldoInsuficiente;
+import contabank.modelos.Cliente;
+import contabank.modelos.Conta;
 
 public class CriaConta {
 

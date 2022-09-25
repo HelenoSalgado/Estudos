@@ -1,4 +1,7 @@
-package contabank;
+package contabank.testes;
+
+import contabank.contas.ContaCorrente;
+import contabank.contas.ContaPoupanca;
 
 public class TestaContas {
 

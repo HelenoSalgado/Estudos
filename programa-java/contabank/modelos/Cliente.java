@@ -1,4 +1,4 @@
-package contabank;
+package contabank.modelos;
 
 public class Cliente {
 

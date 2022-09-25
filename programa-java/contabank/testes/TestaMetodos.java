@@ -1,4 +1,8 @@
-package contabank;
+package contabank.testes;
+
+import contabank.contas.ContaCorrente;
+import contabank.contas.ContaPoupanca;
+import contabank.modelos.Conta;
 
 public class TestaMetodos {
 

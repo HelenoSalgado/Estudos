@@ -1,4 +1,6 @@
-package contabank;
+package contabank.contas;
+
+import contabank.modelos.Conta;
 
 public class ContaPoupanca extends Conta{
 
