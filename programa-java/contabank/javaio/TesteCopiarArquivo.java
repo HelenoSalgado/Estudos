@@ -19,6 +19,8 @@ public class TesteCopiarArquivo {
 
           Socket s = new Socket();
 
+          System.out.println(s);
+
           InputStream fis = s.getInputStream(); //System.in; //new FileInputStream("lorem.txt");
           Reader isr = new InputStreamReader(fis);
           BufferedReader br = new BufferedReader(isr);

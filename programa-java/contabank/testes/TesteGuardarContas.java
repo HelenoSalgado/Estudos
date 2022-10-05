@@ -70,7 +70,7 @@ public class TesteGuardarContas {
     //System.out.println("Tamanho: " + lista.size());
     
     for(int i = 0; i < lista.size(); i++) {
-      Object oRef = lista.get(i);
+      //Object oRef = lista.get(i);
       //System.out.println(oRef);
     }
     
