@@ -24,6 +24,8 @@ public class TestaAlunos {
 
     System.out.println(alunos);    
 
+    alunos.forEach(a -> System.out.println(a));
+
 }
 
 }

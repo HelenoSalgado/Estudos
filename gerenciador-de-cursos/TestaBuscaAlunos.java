@@ -16,6 +16,7 @@ public class TestaBuscaAlunos {
       System.out.println("Quem é o aluno com matricula 5617?");
       Aluno aluno = javaColecoes.buscaMatriculado(5217);
       System.out.println("Aluno: " + aluno);
+
   }
 
 }
