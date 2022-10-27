@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API CEP</title>
+</head>
+<body>
+  
+  <form>
+    <input type="number" name="cep" id="cep">
+    <input type="button" value="Valide" onclick="enviarCep()">
+  </form> 
+  
+  
+  <script>
+    
+    
+    
+    function enviarCep() {
+
+      const cep = document.querySelector("#cep").value;
+      const url = `http://viacep.com.br/ws/${cep}/json`;
+
+      console.log(cep);
+      
+      const options = {
+        
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          
+          'content-type': 'application/json;charset=utf-8'
+          
+        }
+        
+      }
+
+      const dataResponse = fetch(url, options).then(response => response.json()).then(data => {data.console.error();})
+      
+      console.log(dataResponse);
+    }
+    
+    
+    
+    
+    
+    
+  </script>
+</body>
+</html>

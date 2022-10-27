@@ -1,0 +1,17 @@
+// var dados = {
+//     nome: "Notebook",
+//     descricao: "Notebook ideal"
+// };
+
+
+// (async () => {
+//     const db = require('./models/db/ConnectDB');
+ 
+//     const clientes = await db.selectCustomers();
+//     console.log(clientes);
+
+//     // const result = await db.insertCustomer(dados);
+//     // console.log(result);
+
+
+// })();
