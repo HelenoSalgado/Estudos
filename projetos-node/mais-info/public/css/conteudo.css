@@ -1,0 +1,40 @@
+.conteudo-primario{
+  padding: 20px;
+}
+
+.caixa-conteudo-primario{
+  display: block;
+}
+
+.caixa-link{
+  position: relative;
+  margin: 2rem auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  height: 80px;
+  background-color: var(--cor-caixa-link);
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 3px 3px 10px #00000065;
+}
+
+.caixa-link img{
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.caixa-link a{
+  position: relative;
+  padding: 10px;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  margin: auto;
+  color: var(--cor-fonte-link);
+  text-decoration: none;
+  border: none;
+}

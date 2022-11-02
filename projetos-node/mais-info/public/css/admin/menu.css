@@ -1,0 +1,67 @@
+li{
+  font-family: var(--font-primaria);
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  left: -270px;
+  width: 250px;
+  height: 400px;
+  background-color: var(--cor-fundo);
+  border: .5px solid var(--cor-borda);
+  border-bottom-right-radius: 7px;
+  transition: 500ms ease-in;
+  z-index: 6;
+}
+
+.menu-ativo{
+  left: 0;
+}
+
+.menu-lista{
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-lista li{
+  list-style: none;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  padding: 10px;
+  transition: 200ms all;
+}
+
+.menu-lista li a{
+  text-decoration: none;
+  border: none;
+}
+
+.menu-lista li:hover{
+  opacity: .7;
+  cursor: pointer;
+}
+
+.menu-hamburguer{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  /* background-color: var(--cor-fundo); */
+  background-image: url(/bio/admin/asset/img/icones-edicao/hamburguer.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 500ms ease-in;
+  z-index: 6;
+}
+
+.menu-hamburguer-ativo{
+  left: 210px;
+  background-image: url(/bio/admin/asset/img/icones-edicao/close.svg);
+}

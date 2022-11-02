@@ -1,0 +1,316 @@
+:root{
+    --cor-fonte-edicao: #4d4c4c;
+}
+
+/* em, img, a{
+    border: .5px solid #ddd;
+} */
+
+.cabecalho-primario::before, 
+.caixa-conteudo-primario div a::before,
+.instagram:before, .facebook:before, .email:before, .whatsapp:before{
+    position: absolute;
+    right: 18px;
+    width: 15px;
+    opacity: .3;
+}
+
+.caixa-conteudo-primario div .link-add::before{
+    content: "";
+}
+
+.cabecalho-primario::before{
+    top: 20px;
+    content: url(/bio/asset/img/icons/edit_modify_icon.png);
+}
+
+/* .instagram:before, .facebook:before, .email:before, .whatsapp:before{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -10px;
+    content: url(/bio/asset/img/icons/edit_modify_icon.png);
+    z-index: 1;
+} */
+
+.caixa-conteudo-primario div a::before{
+    top: 50%;
+    transform: translateY(-50%);
+    content: url(/bio/asset/img/icons/edit_modify_icon.png);
+}
+
+/* CSS Edição */
+
+.area-input-editar{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 600px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.area-input-editar, .input-editar{
+  font-family: var(--font-primaria);  
+}
+
+.area-input-editar span{
+    order: -1;
+    color: var(--cor-fonte-edicao);
+    font-size: 24px;
+    line-height: 0;
+    text-align: start;
+    background-color: #eee;
+    padding: 20px 10px;
+    width: 100%;
+    border-radius: 7px 7px 0 0 ;
+    text-shadow: none;
+    background-color: #e1e1e1;
+    margin: 0;
+}
+
+.area-input-editar em{
+    color: var(--cor-fonte-edicao);
+    font-size: 24px;
+    line-height: 0;
+    line-height: 18px;
+    text-align: start;
+    background-color: #eee;
+    padding: 10px 8px 10px 10px;
+    width: 100%;
+    text-shadow: none;
+    background-color: #e1e1e1;
+    margin: 0;
+    order: 3;
+}
+
+.area-input-editar span::after, .area-input-editar em::after{
+    display: inline;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.area-input-editar span::after :not(h1){
+    content: url(/bio/admin/asset/img/icones-edicao/link.svg);
+}
+
+/*.area-input-editar em::after{
+    content: url(/admin/asset/img/icones-edicao/texto.svg);
+}*/
+
+.input-editar{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    background-color: #eee;
+    color: #1a1919;
+    z-index: 10;
+    margin: 0;
+}
+
+.input-texto-link{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+    background-color: #eee;
+    color: #1a1919;
+    margin: 0;
+    order: 4;
+}
+
+.texto-editar-img{
+    display: block;
+    width: 30%;
+    height: auto;
+    font-size: 18px;
+    color: var(--cor-fonte-edicao);
+}
+
+.form-upload-imagem{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 10px;
+    padding: 10px;
+    background-color: #eee;
+    color: #1a1919;
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px #000;
+    z-index: 10;
+}
+
+.form-upload-imagem span{
+    width: 100%;
+    max-width: 300px;
+    font-family: var(--cor-primaria);
+    font-size: 23px;
+    color: var(--cor-fonte-edicao);
+}
+
+.form-upload-imagem input[type="file"]{
+    height: 50px;
+    background-color: #b6b6b6;
+    border-radius: 7px;
+}
+
+.form-upload-imagem input[type="submit"]{
+    border: none;
+}
+
+.botoes-editar, .form-botoes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #eee;
+    font-family: var(--font-primaria);
+    border-radius: 0 0 7px 7px;
+    margin: 0;
+    height: 50px;
+    order: 5;
+}
+
+.botoes-editar{
+    padding: 9px;
+}
+
+.botao-salvar, .funcao-voltar, 
+.form-upload-imagem input[type="submit"], 
+.voltar, .funcao-excluir, .funcao-remover-imagem{
+    flex: 1 1 200px;
+    text-align: center;
+    font-size: 1.3rem;
+    text-shadow: none;
+    color: var(--cor-fonte-edicao);
+    padding: 5px;
+    border-radius: 3px; 
+    cursor: pointer;
+    transition: 300ms all;
+}
+
+.form-upload-imagem input[type="submit"]{
+    height: 45px;
+    font-size: 1.3rem;
+}
+
+.botao-salvar, .form-upload-imagem input[type="submit"]{
+    background-color: #91e491;
+}
+
+.voltar, .funcao-excluir, .funcao-remover-imagem{
+    background-color: #f59d9d;
+}
+
+.funcao-voltar{
+    background-color: #f5b29d;;
+}
+
+.botao-salvar:hover,
+.form-upload-imagem input[type="submit"]:hover{
+    background-color: #008000;
+    color: #fff;
+}
+
+.voltar:hover, .funcao-excluir:hover{
+    background-color: var(--cor-segundaria);
+    color: #fff;
+}
+
+.funcao-voltar:hover{
+    background-color: var(--cor-primaria);
+}
+
+.novo-link{
+    opacity: .3;
+    text-align: center;
+}
+
+.novo-link img{
+    display: none;
+}
+
+.novo-link div a{
+    width: 100%;
+}
+
+.caixa-link img{
+    width: 30%;
+    /* background-image: url(/bio/admin/asset/img/icones-edicao/editar-imagem.png);
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position: center center; */
+}
+
+.caixa-link img::after{
+    content: "Imagem";
+    font-size: 10px;
+    position: absolute;
+    top: 40%;
+    left: 15px;
+}
+
+.caixa-link img::before{
+    content: "opcional";
+    font-size: 10px;
+    position: absolute;
+    top: 55%;
+    left: 15px;
+}
+
+.esmaecer{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5e5e5ecc;
+    filter: blur(5px);
+    backdrop-filter: (5px);
+    z-index: 0;
+}
+.loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border: 5px solid var(--cor-primaria);
+    border-top: 5px solid var(--cor-fonte-edicao);
+    border-radius: 50%;
+    animation: loading 2s linear infinite;
+    z-index: 11;
+}
+
+@media (max-width: 500px) {
+
+    .area-input-editar{
+       width: 90%;
+       transform: translateX(-53%);
+    }
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+        transform: translate(-50%, -50%);
+    }
+    100%{
+        transform: rotate(360deg);
+        transform: translate(-50%, -50%);
+    }
+}

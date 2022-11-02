@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEUS LINKS</title>
+  <meta name="description" content="O conhecimento é a chave para o sucesso.">
+  <meta property="og:image" content="/img/logo-inicial.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&amp;display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/cabecalho.css">
+  <link rel="stylesheet" href="/css/redes-sociais.css">
+  <link rel="stylesheet" href="/css/conteudo.css">
+  <link rel="stylesheet" href="/css/rodape.css">
+
+
+  {{#if user.active }}
+      <link rel="stylesheet" href="/css/admin/editor-marcacoes.css">
+  {{/if}}
+  
+</head>
+<body>
+
+  <header class="cabecalho-primario"><img style="display:none;" class="img-de-fundo" id="img_fundo_cabecalho" src="">
+  
+    <div class="caixa-texto-cabecalho">
+        <img class="img-perfil" id="img_perfil" src="">
+  
+        <h1 class="cabecalho-titulo-primario" id="titulo_primario">Olá, sou Leidemara Salgado. Tudo bem? Obrigado pela visita, abaixo estão alguns links.</h1>
+  
+        <em class="cabecalho-primario-citacao" id="cabecalho_citacao">O conhecimento é a chave para o sucesso!</em>
+    </div>
+
+  </header>
+
+  <div class="redes-sociais">
+    
+    <div class="redes-sociais">
+       <a class="instagram" id="link_instagram" href="">
+          <img class="instagram" src="">
+       </a>
+    
+       <a class="facebook" id="link_facebook" href="">
+          <img class="facebook" src="">
+       </a>
+    
+       <a class="email" id="link_email" href="">
+          <img class="email" src="">
+       </a>
+    
+       <a class="whatsapp" id="link_whatsapp" href="">
+          <img class="whatsapp" src="">
+       </a>
+    </div>
+
+  </div>
+
+  {{{ body }}}
+
+  <footer class="rodape-primario">
+    
+    <div class="rodape-primario-caixa">
+    <div class="rodape-primario-caixa">
+        <a class="texto-copywrite">
+            <p id="copywrite">Direitos Reservados - 2022</p>
+        </a>
+    </div>
+  </div>
+
+  </footer>
+  
+</body>

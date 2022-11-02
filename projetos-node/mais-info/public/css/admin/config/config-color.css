@@ -1,0 +1,68 @@
+body{
+    background-color: var(--cor-fundo);
+    font-family: var(--font-primaria);
+}
+
+.config{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    overflow: hidden;
+    background-color: transparent;
+   }
+
+   #colors {
+    display: block;
+    padding: 10px;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    outline: none;
+    border-radius: 5px;
+   }
+
+   #colors option{
+    font-size: 1rem;
+    padding: 3px;
+   }
+
+   .config div{
+    display: block;
+    margin: auto;
+   }
+
+   #picker{
+    cursor: move;
+   }
+   
+   .visible-codigo-color{
+    display: block;
+    max-width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+   }
+
+   .config button{
+    display: block;
+    width: 250px;
+    margin: 30px auto;
+    font-size: 18px;
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 200ms;
+   }
+
+   .config button:hover{
+    background-color: #257cff;
+    color: #fff;
+   }

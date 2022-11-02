@@ -1,0 +1,37 @@
+body{
+  background-color: var(--cor-fundo);
+  color: var(--cor-fonte);
+}
+
+.dados-conta{
+  display: block;
+  font-family: var(--font-primaria);
+  max-width: 800px;
+  margin: auto;
+  background-color: var(--cor-fundo);
+}
+
+.dados-conta div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.dados-conta strong{
+  margin-right: 10px;
+}
+
+.dados-conta-titulo{
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.nome-usuario, .email-usuario{
+  display: inline-block;
+}
+
+.imagem-usuario{
+  display: block;
+  margin: 1rem auto;
+  border-radius: 50%;
+}

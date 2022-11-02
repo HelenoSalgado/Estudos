@@ -1,0 +1,67 @@
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: './db/app.db'
+});
+
+module.exports = sequelize;
+
+cor_de_fundo cor_caixa_link cor_de_fonte cor_fonte_link titulo_primario cabecalho_citacao img_fundo_cabecalho img_perfil link_instagram link_facebook link_email link_whatsapp img_link_01 img_link_02 img_link_03 img_link_04 img_link_05 img_link_06 link_01 link_02 link_03 link_04 link_05 link_06 texto_link_01 texto_link_02 texto_link_03 texto_link_04 texto_link_05 texto_link_06 numero_de_links copywrite
+
+var mysql = require('mysql');
+
+var dados = {
+    nome: "Notebook",
+    descricao: "Notebook ideal"
+};
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "santidade3",
+  database: "loja"
+});
+
+// con.connect(function(err) {
+//   if (err) throw err;
+  
+//   const sql = 'INSERT INTO PRODUTO(nome,descricao) VALUES (?,?);';
+//   const values = [dados.nome, dados.descricao];
+
+//     con.query(sql, values, function (err, result, fields) {
+//       if (err) throw err;
+//       console.log(result);
+
+//     });
+
+// });
+
+// Delete 
+
+con.connect(function(err) {
+
+  if (err) throw err;
+  for (let index = 0; index < 40; index++) {
+
+    setTimeout(() => {
+
+      var sql = "DELETE FROM PRODUTO WHERE id =" + index;
+
+      con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("Number of records deleted: " + result.affectedRows);
+    
+      });
+
+    }, 500);
+    
+    
+  }
+  //var sql = "DELETE FROM PRODUTO WHERE id = '33'";
+
+  // con.query(sql, function (err, result) {
+  //   if (err) throw err;
+  //   console.log("Number of records deleted: " + result.affectedRows);
+
+  // });

@@ -1,0 +1,23 @@
+.rodape-primario{
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+}
+
+.rodape-primario-caixa{
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
+  text-align: center;
+  padding: 1rem 20px;
+}
+
+.rodape-primario-caixa p{
+  position: relative;
+  font-size: 1.1rem;
+  color: var(--cor-fonte);
+}
+
+.rodape-primario-caixa p a{
+  color: var(--cor-fonte);
+}
