@@ -4,7 +4,7 @@ const app        = express();
 const path       = require('path');
 const db         = require('./db/connection');
 const MaisInfo   = require('./models/MaisInfo');
-const PORT       = 3000;
+const PORT       = 4000;
 const bodyParser = require('body-parser');
 
 
@@ -30,9 +30,9 @@ const resultado = db.sync().then(() => {
     // Routes
     app.get('/', async (req, res) => {
 
-    //const maisInfos = await MaisInfo.findAll({raw: true});
+    const maisInfos = await MaisInfo.findAll({raw: true});
 
-    //console.log(maisInfos);
+    console.log(maisInfos);
 
     const user = {
        active: true,
