@@ -1,19 +1,29 @@
 *{
     margin: 0;
 }
-html{
-    font-size: 16px;
+body, input{
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-shadow: .3px .3px .5px rgba(0, 0, 0, 0.678);
 }
 section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
     background-color: blueviolet;
     color: #fff;
     padding: .5rem;
+    width: 100%;
     max-width: 800px;
-    border-radius: 0 0 5px 5px;
-    margin: auto;
+    border-radius: 5px;
+    margin: 0 1rem;
+    height: 50%;
 }
 h1{
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
     font-size: 2rem;
 }
 form > p{
@@ -30,8 +40,8 @@ form div{
     position: relative;
     margin: 20px 0;
     max-width: 500px;
-    height: auto;
-    background-color: blue;
+    min-height: 70px;
+    background-color: #0000ff5d;
     padding-left: .2rem;
     border-radius: 3px;
     overflow-x: hidden;
@@ -39,20 +49,25 @@ form div{
 #resposta{
     margin: 20px 5px;
 }
-form > p input[type="button"]{
+input[type="button"]{
     background-color: blue;
     color: #fff;
-    padding: 10px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    border: 2px solid #eee;
-    border-radius: 7px;
-    transition: .3s ease-in;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.562);
+    transition: all 300ms;
 }
-form p input[type="button"]:hover{
-    border: 2px solid rgb(247, 222, 6);
+input[type="button"]:hover{
+    background-color: #eee;
+    color: #0000ff;
 }
 em{
     font-size: .9rem;
     color: yellow;
+    height: 15px;
+
 }
