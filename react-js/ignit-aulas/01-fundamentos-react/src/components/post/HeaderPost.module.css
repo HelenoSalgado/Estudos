@@ -1,0 +1,25 @@
+.headerPost{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+}
+.headerPost > div{
+    display: flex;
+    align-items: center;
+}
+.avatar{
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--green);
+    box-sizing: initial;
+    border-radius: 3px;
+}
+.infoProfile{
+    margin: 0 1rem;
+    font-size: .8rem;
+}
+.dataPublic{
+    font-size: .8rem;
+    padding-right: .5rem;
+}

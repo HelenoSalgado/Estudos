@@ -1,0 +1,30 @@
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.comment strong{
+    margin-bottom: 1.5rem;
+}
+.comment textarea{
+    width: 100%;
+    padding: .8rem;
+    border-color: var(--green);
+    border-radius: 8px;
+    transition: 300ms all;
+}
+.comment textarea:hover{
+    border-color: var(--green-300);
+    outline-style: none;
+}
+.comment button{
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    background-color: var(--green);
+    border: none;
+    border-radius: 8px;
+    transition: 200ms all;
+}
+.comment button:hover{
+    background-color: var(--green-300);
+}

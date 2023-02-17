@@ -1,0 +1,43 @@
+.sidebar{
+    position: relative;
+    text-align: center;
+    background-color: var(--gray-300);
+    border-radius: 5px;
+}
+
+.cover{
+    width: 256px;
+    height: 72px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.avatar{
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--green);
+    box-sizing: initial;
+    border-radius: 3px;
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translateX( -50%);
+}
+.infoProfile{
+    padding: 3.1rem .6rem 1.8rem .6rem;
+    border-bottom: 1px solid var(--gray-500);
+}
+.editProfile{
+    padding: 1.8rem .6rem;
+}
+.editProfile > a{
+    padding: .8rem 1.6rem;
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    color: var(--green);
+    text-decoration: none;
+}
+.editProfile > a svg{
+    display: inline;
+    vertical-align: middle;
+    margin: 5px;
+}
