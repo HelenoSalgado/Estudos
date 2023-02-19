@@ -2,13 +2,12 @@
     position: relative;
     text-align: center;
     background-color: var(--gray-300);
+    overflow: hidden;
     border-radius: 5px;
 }
-
 .cover{
     width: 256px;
     height: 72px;
-    overflow: hidden;
     object-fit: cover;
 }
 .avatar{

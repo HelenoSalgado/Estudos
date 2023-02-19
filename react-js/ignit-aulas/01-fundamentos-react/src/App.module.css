@@ -8,6 +8,13 @@
     align-items: flex-start;
 }
 
+.containerPost{
+    margin-bottom: 5rem;
+    background-color: var(--gray-300);
+    padding: 1rem;
+    border-radius: 7px;
+}
+
 @media (max-width: 750px) {
     .wrapper{
         grid-template-columns: 1fr;  

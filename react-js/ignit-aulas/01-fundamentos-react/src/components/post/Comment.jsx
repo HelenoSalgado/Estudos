@@ -8,7 +8,7 @@ export function Comment(){
             name="" 
             id="" 
             cols="30" 
-            rows="06"
+            rows="05"
             >
 
             </textarea>
