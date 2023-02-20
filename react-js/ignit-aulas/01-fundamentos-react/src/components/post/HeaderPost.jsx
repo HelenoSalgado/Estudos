@@ -5,6 +5,7 @@ import styles from './HeaderPost.module.css'
 
 
 export function HeaderPost({ author }){
+    
     const publishedDateFormated = format(author.publishedAt, "d 'de' LLLL 'às' HH:mm'h'",{
         locale: ptBR,
     })

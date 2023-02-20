@@ -1,18 +1,19 @@
 import styles from './Comment.module.css'
 
-export function Comment(){
+export function Comment({ handleCreateNewComment }){
+
     return(
-        <div className={styles.comment}>
+        <form onSubmit={handleCreateNewComment} className={styles.comment}>
             <strong>Deixe seu feedback</strong>
             <textarea 
-            name="" 
-            id="" 
+            name="comment" 
+            id="comment" 
             cols="30" 
             rows="05"
             >
 
             </textarea>
-            <button>Publicar</button>
-        </div>
+            <button type='submit'>Publicar</button>
+        </form>
     )
 }
