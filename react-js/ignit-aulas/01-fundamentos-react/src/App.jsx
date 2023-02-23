@@ -26,17 +26,6 @@ const posts = [
       { type: 'link', content: '👉 leno.design/doctorcare'},
       { type: 'link', content: '#novoprojeto, #nlw, #rocketseat'}
     ],
-
-    comments: [
-      {
-        author: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/48570772?v=4',
-          name: 'Allan Gabriel',
-          publishedAt: new  Date()
-        },
-        content: 'Muito bom...',
-      }
-    ]
   },
   {
     id: 2,
@@ -53,17 +42,6 @@ const posts = [
       { type: 'link', content: '👉 allan.design/doctorcare'},
       { type: 'link', content: '#novoprojeto, #nlw, #rocketseat'}
     ],
-
-    comments: [
-      {
-        author: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/73316162?v=4',
-          name: 'Heleno Salgado',
-          publishedAt: new  Date()
-        },
-        content: 'Muito bom...',
-      }
-    ]
   }
 ]
 
@@ -73,11 +51,16 @@ export function App() {
     'Post top demais'
   ])
 
-  function handleCreateNewComment(e) {
+  const [newCommentText, setNewCommentText] = useState('')
 
+  function handleNewCommentChange(e) {
+    setNewCommentText(e.target.value)
+  }
+
+  function handleCreateNewComment(e) {
     e.preventDefault()
-    //setCommts(commts + e.target.comment.value)
-  
+    setCommts([...commts, newCommentText])
+    setNewCommentText('')
   }
 
   return (
@@ -99,9 +82,11 @@ export function App() {
               />
               <Comment 
                 newComment={handleCreateNewComment}
+                newCommentChange={handleNewCommentChange}
+                newCommentText={newCommentText}
               />
               <Comments 
-                comments={post.comments}
+                comments={commts}
               />
             </div>
           )
