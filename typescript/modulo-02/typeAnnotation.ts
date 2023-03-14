@@ -43,3 +43,31 @@ console.log(frutas[0]);
 
 let frutas1: Array<string> = ['🍍', '🍊', '🍎', '🍉', '🥭'];
 console.log(frutas1[3]);
+
+// Exemplo de Array com Spread Operator
+
+let listaNumeros = [0, 1, 2, 3, 4, 5];
+listaNumeros = [...listaNumeros, 6, 7, 8, 9, 10];
+
+console.log(listaNumeros);
+
+// Exemplo de Array com laço de iteração
+
+let linguagensArray:string[] = new Array('JavaScript', 'Python', 'PHP', 'C#');
+
+function funcaoLinguagens(linguagens:string[]) {
+    for (let i = 0; i < linguagens.length; i++) {
+        console.log(linguagensArray[i]); 
+    }
+}
+
+funcaoLinguagens(linguagensArray);
+
+// Tipo Tupla
+let pessoa: [string, string, number];
+pessoa = ['Heleno Salgado', 'Estuda', 26];
+console.log(pessoa);
+
+// Usando Tupla com spread operator
+let listaFrutas2: [number, boolean, ...string[]] = [5, true, ...frutas];
+console.log(listaFrutas2);
