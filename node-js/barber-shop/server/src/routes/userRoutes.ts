@@ -1,9 +1,9 @@
-const userRoutes = require('express').Router();
-const SchedulingController = require('../controllers/SchedulingController');
-const UserController = require('../controllers/UserController');
-const tokenUser = require('../middlewares/tokenUser');
+import express from 'express';
+import SchedulingController from '../controllers/SchedulingController';
+import UserController from '../controllers/UserController';
+import tokenUser from '../middlewares/tokenUser';
 
-userRoutes.post('/sair', UserController.logout);
+const userRoutes = express.Router();
 
 // Token para todas as rotas de GRUD.
 userRoutes.use(tokenUser);
@@ -17,4 +17,4 @@ userRoutes.put('/atualizar', UserController.update);
 userRoutes.delete('/deletar', UserController.delete);
 
 
-module.exports = userRoutes;
+export = userRoutes;

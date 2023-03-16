@@ -1,7 +1,9 @@
-const barberShopController = require('../controllers/BarberShop');
-const SchedulingController = require('../controllers/SchedulingController');
-const UserController = require('../controllers/UserController');
-const publicRoutes = require('express').Router();
+import barberShopController from '../controllers/BarberShop';
+import SchedulingController from '../controllers/SchedulingController';
+import UserController from '../controllers/UserController';
+import express from 'express';
+
+const publicRoutes = express.Router();
 
 publicRoutes.get('/servicos', barberShopController.servicesShow);
 
@@ -11,4 +13,4 @@ publicRoutes.post('/agendamento/criar', SchedulingController.create);
 publicRoutes.post('/criar-conta',UserController.create);
 publicRoutes.post('/entrar', UserController.login);
 
-module.exports = publicRoutes;
+export = publicRoutes;

@@ -1,16 +1,19 @@
-// import { Jwt } from 'jsonwebtoken';
-// import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+import { Request, Response } from 'express';
 
-// function tokenUser(req: any, res: Response, next: any){
-//     const token = req.headers['x-acess-token'];
-//     Jwt.verify(token, process.env.SECRET, (err: Jwt, decoded: Jwt) => {
-//         if(err)
-//            return res.status(401).json({ err: 'Você não tem permissão, autentique-se novamente.' });
+const SECRET: any = process.env.SECRET;
 
-//         req.userId = decoded.userId;
+function tokenUser(req: Request | any, res: Response, next: any){
+    const token: any = req.headers['x-acess-token'];
+    jwt.verify(token, SECRET, (err: any, decoded: any) => {
+        if(err)
+           return res.status(401).json({ err: 'Você não tem permissão, autentique-se novamente.' });
 
-//         next();
-//     })
-// }
+        req.userId = decoded.userId;
 
-// module.exports = tokenUser;
+        next();
+    })
+}
+
+export = tokenUser;

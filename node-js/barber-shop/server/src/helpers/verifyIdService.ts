@@ -1,11 +1,11 @@
-let connect = [];
+let connect: any = [];
 
-const verifyIdService = (id_servico) => {
+const verifyIdService = (id_servico: any) => {
     for (let i = 0; i < id_servico.length; i++) {
        connect.push({id: id_servico[i]});
     }
     return connect;  
 }
 
-module.exports = verifyIdService;
+export = verifyIdService;
 

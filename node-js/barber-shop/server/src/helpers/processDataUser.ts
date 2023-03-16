@@ -1,46 +1,63 @@
-const { object, string, size, assert, define, number } = require('superstruct');
-const isEmail = require('is-email');
-const ShortUniqueId = require('short-unique-id');
-const bcrypt = require('bcryptjs');
+import ShortUniqueId from 'short-unique-id';
+import { z } from 'zod';
+import bcrypt from 'bcryptjs';
+import { fromZodError } from 'zod-validation-error';
 
-const processDataUser = (nome, email, telefone, senha) => {
+const userSchema = z.object({
+  id: z.optional(z.string()),
+  nome: z.string({
+    required_error: 'Nome é obrigatório.',
+    invalid_type_error: 'Não é um nome válido.'
+  }).min(2, {
+    message: 'Nome de ter entre 2 e 26 caracteres.'
+  }).max(26, {
+    message: 'Nome deve ter entre 2 e 26 caracteres.'
+  }),
+  email: z.string({
+    required_error: 'Email é obrigatório.',
+    invalid_type_error: 'Não é uma string.'
+  }).email({
+    message: 'Não é um email válido.'
+  }),
+  telefone: z.number({
+    required_error: 'Telefone é obrigatório.',
+    invalid_type_error: 'Não é do tipo numérico.'
+  }).transform(telefone => telefone.toString()),
+  senha: z.string({
+    required_error: 'Senha é obrigatória.',
+    invalid_type_error: 'A senha deve conter letras e números.'
+  }).min(6, {
+    message: 'Senha deve ter entre 6 e 8 caracteres.'
+  }).max(8, {
+    message: 'Senha deve ter entre 6 e 8 caracteres.'
+  })
+})
 
-    if (!email)
-      return res.json({ message: 'Email é obrigatório'});
-    
-    if (!telefone)
-      return res.json({ message: 'Telefone é obrigatório'});
+type User = z.input<typeof userSchema>;
 
-    if (!senha)
-      return res.json({ message: 'Senha é obrigatória'});
 
-    const User = object({
-    nome: size(string(), 2, 20),
-    email: define(email, isEmail),
-    telefone: number(size(8, 15)),
-    senha: size(string(), 6, 8)
-  });
+const processDataUser = (dataUser: User) => {
 
-  const dataUser = { nome, email, telefone, senha }
-  assert(dataUser, User)
+  try {
+    const data = userSchema.parse(dataUser);
 
-  // Create password
-  const salt = bcrypt.genSaltSync(10);
-  dataUser.senha = bcrypt.hashSync(senha, salt);
+    // Create password
+    const salt = bcrypt.genSaltSync(10);
+    data.senha = bcrypt.hashSync(dataUser.senha, salt);
 
-  // Convert Phone Number to String
-  dataUser.telefone = dataUser.telefone.toString();
+    // Gerar ID
+    const generateId = new ShortUniqueId({ length: 6 });
 
-  // Gerar ID
-  const generate = new ShortUniqueId({ length: 6 });
-  const code = String(generate()).toUpperCase();
+    // Atibuir ID ao usuário
+    data.id = generateId();
 
-  // Atibuir ID ao usuário
-  dataUser.id = code;
+    return data;
+  } catch (err: any) {
+    throw new Error(fromZodError(err).message);
+  }
 
-  return dataUser;
 }
 
-module.exports = processDataUser;
+export = processDataUser;
 
 

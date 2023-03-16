@@ -1,5 +1,6 @@
 import prisma  from '../database/prisma';
 import { Request, Response } from 'express';
+import processDataService from '../helpers/processDataService';
 
 class BarberShopController {
 
@@ -16,7 +17,7 @@ class BarberShopController {
               loja: true,
               preco: true,
               descricao: true
-            }
+            },
           },
           usuario: {
             select: {
@@ -30,8 +31,8 @@ class BarberShopController {
 
     } catch (err: any) {
       res.status(400).json({ err: err.message });
-    }
-  }
+    };
+  };
 
   static async usersShow(req: Request, res: Response) {
     try {
@@ -40,32 +41,31 @@ class BarberShopController {
           nome: true,
           email: true,
           telefone: true
-        }
+        },
       });
       return res.status(200).json(users);
 
     } catch (err: any) {
       res.status(400).json({ err: err.message });
-    }
-  }
+    };
+  };
 
   static async serviceCreate(req: Request, res: Response) {
-    const { nome, loja, preco, descricao } = req.body;
+
     try {
-      const service = await prisma.service.create({ 
-        data: {
-          nome,
-          loja,
-          preco,
-          descricao
-        }
+
+      const service = processDataService(req.body);
+
+      const createService = await prisma.service.create({ 
+        data: service
        });
-      return res.status(200).json(service);
+      return res.status(200).json(createService);
 
     } catch (err: any) {
       res.status(400).json({ err: err.message });
-    }
-  }
+    };
+    
+  };
 
   static async servicesShow(req: Request, res: Response) {
     try {
@@ -76,33 +76,31 @@ class BarberShopController {
           loja: true,
           preco: true,
           descricao: true
-        }
+        },
       });
       return res.status(200).json(services);
 
     } catch (err: any) {
       res.status(400).json({ err: err.message });
-    }
-  }
+    };
+  };
 
   static async serviceUpdate(req: Request, res: Response){
-    const { id, nome, loja, preco, descricao } = req.body;
+
     try {
-      const service = await prisma.service.update({
-         where: { id },
-         data: {
-           nome,
-           loja,
-           preco,
-           descricao
-         }
+
+      const service = processDataService(req.body);
+
+      const updateService = await prisma.service.update({
+         where: { id: req.body.id },
+         data: service,
       });
-      return res.status(200).json(service);
+      return res.status(200).json(updateService);
 
     } catch (err: any) {
       res.status(400).json({ err: err.message});
-    }
-  }
+    };
+  };
 
   static async servicesDelete(req: Request, res: Response) {
     try {
@@ -113,8 +111,8 @@ class BarberShopController {
 
     } catch (err: any) {
       res.status(400).json({ err: err.message });
-    }
-  }
-}
+    };
+  };
+};
 
-module.exports = BarberShopController;
+export = BarberShopController;

@@ -1,19 +1,21 @@
 import prisma from '../database/prisma';
 import bcrypt from 'bcryptjs';
-import Jwt from 'jsonwebtoken';
-import dotenv from 'dotenv/config'; 
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv'; 
 import processDataUser from '../helpers/processDataUser';
 import { Request, Response } from 'express';
+import processDataUserUpdate from '../helpers/processDataUserUpdate';
 
 class UserController {
 
   static async create(req: Request, res: Response) {
 
-    const { nome, email, telefone, senha } = req.body;
+    const dataUser: any = req.body;
 
     try {
 
-      const dataUser = processDataUser(nome, email, telefone, senha);
+      const data: any = processDataUser(dataUser);
+      const email: string = req.body.email;
 
       const userExist = await prisma.user.findUnique({
         where: { email },
@@ -21,7 +23,7 @@ class UserController {
 
       if (!userExist) {
         const user = await prisma.user.create({
-          data: dataUser,
+          data,
           select: {
             id: true,
             nome: true,
@@ -36,6 +38,7 @@ class UserController {
       });
 
     } catch (err: any) {
+      console.log(err);
       res.status(400).json({ err: err.message });
     };
   };
@@ -73,7 +76,8 @@ class UserController {
   };
 
   static async update(req: Request, res: Response) {
-    const { id, nome, email, telefone, senha } = req.body;
+
+    let { id, nome, email, telefone, senha } = req.body;
 
     if (email)
       return res.json({
@@ -82,17 +86,22 @@ class UserController {
 
     if (senha) {
       const salt = bcrypt.genSaltSync(10);
-      var password = bcrypt.hashSync(senha, salt);
+      senha = bcrypt.hashSync(senha, salt);
     };
 
+    const dataUser = {
+      nome,
+      telefone,
+      senha
+    }
+
     try {
+
+      const data = processDataUserUpdate(dataUser);
+
       const user = await prisma.user.update({
         where: { id },
-        data: {
-          nome,
-          telefone,
-          senha: password
-        },
+        data,
         select: {
           nome: true,
           email: true,
@@ -122,35 +131,38 @@ class UserController {
 
   static async login(req: Request, res: Response) {
 
-    const { email, senha } = req.body;
+    interface LoginUser{
+      email: string,
+      senha: string
+    }
 
     try {
+
+      const login: LoginUser = req.body;
+
+      console.log(login)
+
       const user = await prisma.user.findUnique({
         where: {
-          email
+          email: login.email
         },
       });
       if (!user)
         return res.json({ message: 'Usuário não existe.' });
 
       // Check password
-      const passwordChecked = bcrypt.compareSync(senha, user.senha);
+      const passwordChecked = bcrypt.compareSync(login.senha, user.senha);
 
       if (!passwordChecked)
         return res.status(401).json({ message: 'Falha na Autenticação.' });
 
-      let secret: string = process.env.SECRET;
+      // Permisão
+      const SECRET: any = process.env.SECRET;
 
-      // Autenticação para Admin
-      if (user.email == process.env.SECRET_EMAIL){
-          secret = process.env.SECRET_SUDO
-      }
-
-      const token = Jwt.sign({
-        message: 'Você está autenticado.',
+      const token = jwt.sign({
         userId: user.id,
-      }, secret, {
-        expiresIn: "5 days"
+      }, SECRET, {
+        expiresIn: "3 days"
       });
 
       return res.status(200).json({ auth: true, token });
@@ -159,22 +171,6 @@ class UserController {
       res.status(400).json({ err: err.message });
     };
   };
-
-  static async logout(req, res) {
-
-    try {
-      const token = Jwt.sign({
-      }, process.env.SECRET_LOGOUT, {
-        expiresIn: 4000
-      });
-
-      return res.status(200).json({ auth: true, token });
-    } catch (err: any) {
-      res.status(400).json({ err: err.message });
-    };
-  };
-
-
 }
 
-module.exports = UserController;
+export = UserController;
