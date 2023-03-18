@@ -1,0 +1,53 @@
+:root{
+    --cor-primaria: #161616;
+    --cor-primaria-transparente: #161616c4;
+    --cor-secundaria: #ECB074;
+    --cor-fonte: #ffffff;
+    --cor-destaque: #523D2A;
+    /* Sombra para fundo de cor secundária */
+    --shadow-color: 214deg 34% 5%;
+    --shadow-elevation-medium:
+      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.10),
+      0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.10),
+      2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.10),
+      5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.10);
+     /* Sombra para fundo de cor primária */
+     --shadow-color: 210deg 22% 2%;
+     /* Fontes */
+    --font-primary: 'Rubik', sans-serif;
+    --font-secundary: 'Raleway', sans-serif;
+    --font-action: 'Raleway', sans-serif; 
+ }
+ html{
+   scroll-behavior: smooth;
+ }
+ body {
+   position: relative;
+   overflow-X: hidden;
+   min-width: 320px;
+   -webkit-font-smoothing: antialiased;
+   margin: 0;
+   padding: 0;
+   box-sizing: none;
+ }
+ body::-webkit-scrollbar {
+   width: 8px;
+ }
+ body::-webkit-scrollbar-track {
+   background-color: #f7f7f7;
+ } 
+ body::-webkit-scrollbar-thumb {
+   background-color: #14171a54;
+   border-radius: 20px;
+ } 
+ h1, h2, h3, h4{
+   font-family: var(--font-primary);
+ }
+ p, .box-agendamento-servicos{
+   font-family: var(--font-secundary);
+ }
+ a{
+   font-family: var(--font-action);
+   color: var(--cor-fonte);
+   text-decoration: none;
+ }

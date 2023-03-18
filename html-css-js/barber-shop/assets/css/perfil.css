@@ -1,0 +1,147 @@
+body{
+    background-image: url(/assets/img/person-1.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.cabecalho-perfil{
+    position: relative;
+    background-color: var(--cor-primaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding-left: 10px;
+    border-bottom: 2px solid var(--cor-secundaria);
+}
+.cabecalho-perfil > img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--cor-secundaria);
+}
+.cabecalho-perfil nav{
+    display: flex;
+    flex-basis: 300px;
+    justify-content: end;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.cabecalho-perfil nav a{
+    margin: 0 1rem;
+}
+.info-usuario{
+    margin: 3rem auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 2rem;
+    padding: 1rem;
+}
+.box-dados-pessoais, .box-agendamento{
+    position: relative;
+    flex: 1 2 300px;
+    background-color: var(--cor-primaria-transparente);
+    color: var(--cor-fonte);
+    margin: 2rem 0;
+    border-radius: 15px;
+    box-shadow: var(--shadow-elevation-medium);
+    padding: 2.5rem;
+}
+.box-dados-pessoais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+} 
+.box-dados-pessoais > h3, .box-agendamento > h3{
+    position: absolute;
+    top: -19px;
+    left: 0;
+    width: 100%;
+    padding: .5rem 0;
+    text-align: center;
+    background-color: var(--cor-secundaria);
+    border-radius: 15px 15px 0 0;
+}
+.box-dados-pessoais button, .agendamento-botoes{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.box-dados-pessoais button{
+    height: 40px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fonte);
+    border: none;
+    border-radius: 0 0 15px 15px;
+    font-size: 1.2rem;
+    transition: all 200ms;
+}
+.box-dados-pessoais div{
+    padding: 1rem;
+}
+.calendario{
+    border-radius: 10px;
+    padding: .5rem;
+    max-width: 400px;
+    margin: auto;
+}
+.box-agendamento-servicos{
+    margin: 1rem 0;
+}
+.box-agendamento-servicos select{
+    border: 0;
+    height: 2rem;
+    padding: 0 .5rem;
+    border-radius: 3px;
+}
+.agendamento-botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.agendamento-botoes button{
+    flex: 1 2 100px;
+    height: 40px;
+    border: none;
+    font-size: 1.2rem;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fonte);
+    cursor: pointer;
+    transition: all 200ms;
+}
+.agendamento-botoes button:nth-child(1){
+    border-bottom-left-radius: 15px;
+}
+.agendamento-botoes button:nth-child(2){
+    border-bottom-right-radius: 15px;
+}
+.bt-hover:hover{
+    background-color: #ecb074a9;
+}
+footer{
+    text-align: center;
+    height: 70px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fonte);
+    padding: 1rem;
+}
+.copy{
+    padding: 1rem 0;
+}
+@media (max-width: 700px) {
+    .box-dados-pessoais{
+        order: 2;
+    }
+    .box-dados-pessoais div{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
