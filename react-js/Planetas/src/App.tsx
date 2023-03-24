@@ -1,6 +1,8 @@
-import styles from './App.module.css'
+import styles from './styles/App.module.css'
 import { Planets } from './components/Planets'
 import axios from 'axios'
+import { Header } from './components/Header';
+
 
 // Resgate planetas
 const planets = await axios.get('https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list', {
@@ -16,19 +18,13 @@ const planets = await axios.get('https://planets-info-by-newbapi.p.rapidapi.com/
 
 function App() {
 
-  console.log(typeof planets)
-
   return (
 
     <div className={styles.body}>
-      <div id="google_translate_element" className='boxTradutor'></div>
-
+      <Header />
       <Planets
         planets={planets}
       />
-
-      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
     </div>
 
   )

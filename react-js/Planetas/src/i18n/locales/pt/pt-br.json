@@ -1,0 +1,38 @@
+{
+    "translation": {
+        "planets": [
+            {
+                "name": "Saturno",
+                "description": "Saturno é o sexto planeta a partir do Sol e o segundo maior do Sistema Solar, depois de Júpiter. É um gigante gasoso com um raio médio de cerca de nove vezes e meia o da Terra. Tem apenas um oitavo da média densidade da Terra; no entanto, com seu volume maior, Saturno é mais de 95 vezes mais massivo."
+            },
+            {
+                "name": "Jupiter",
+                "description": "Júpiter é o quinto planeta a contar do Sol e o maior do Sistema Solar. É um gigante gasoso com uma massa superior a duas vezes e meia a de todos os outros planetas do Sistema Solar combinados, mas ligeiramente inferior a um. milésimo da massa do Sol."
+            },
+            {
+                "name": "Urano",
+                "description": "Urano é o sétimo planeta a partir do Sol. Seu nome é uma referência ao deus grego do céu, Urano, que, segundo a mitologia grega, foi bisavô de Ares, avô de Zeus e pai de Cronos. Tem o terceiro maior raio planetário e a quarta maior massa planetária do Sistema Solar."
+            },
+            {
+                "name": "Netuno",
+                "description": "Netuno é o oitavo e mais distante planeta solar conhecido do Sol. No Sistema Solar, é o quarto maior planeta em diâmetro, o terceiro planeta mais massivo e o planeta gigante mais denso. Tem 17 vezes a massa da Terra, e ligeiramente mais massivo que seu quase gêmeo Urano."
+            },
+            {
+                "name": "Vênus",
+                "description": "Vênus é o segundo planeta a partir do Sol e recebeu o nome da deusa romana do amor e da beleza. Como o objeto natural mais brilhante no céu noturno da Terra depois da Lua, Vênus pode lançar sombras e pode ser visível a olho nu em plena luz do dia."
+            },
+            {
+                "name": "Terra",
+                "description": "A Terra é o terceiro planeta a partir do Sol e o único objeto astronômico conhecido por abrigar vida. Embora grandes quantidades de água possam ser encontradas em todo o Sistema Solar, apenas a Terra sustenta água superficial líquida. Cerca de 71% da superfície da Terra é composta por oceano, diminuindo o gelo polar da Terra, lagos e rios."
+            },
+            {
+                "name": "Marte",
+                "description": "Marte é o quarto planeta a partir do Sol e o segundo menor planeta do Sistema Solar, sendo maior que apenas Mercúrio. Em inglês, Marte carrega o nome do deus romano da guerra e é freqüentemente chamado de \"Planeta Vermelho\" ."
+            },
+            {
+                "name": "Mercurio",
+                "description": "Mercúrio é o menor planeta do Sistema Solar e o mais próximo do Sol. Sua órbita ao redor do Sol leva 87,97 dias terrestres, o mais curto de todos os planetas do Sol."
+            }
+        ]
+    }
+}
