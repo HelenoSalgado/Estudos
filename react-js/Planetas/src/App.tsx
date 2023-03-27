@@ -1,7 +1,10 @@
 import styles from './styles/App.module.css'
 import { Planets } from './components/Planets'
-import axios from 'axios'
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import axios from 'axios'
+import { Mars } from './pages/Mars';
+import mars from './utils/marsApi';
 
 
 // Resgate planetas
@@ -24,6 +27,10 @@ function App() {
       <Header />
       <Planets
         planets={planets}
+      />
+      <Footer />
+      <Mars 
+       photos={mars}
       />
     </div>
 
