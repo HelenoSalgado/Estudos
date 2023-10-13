@@ -1,4 +1,4 @@
-package com.heleno.todolist.models;
+package com.heleno.todolist.user;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
