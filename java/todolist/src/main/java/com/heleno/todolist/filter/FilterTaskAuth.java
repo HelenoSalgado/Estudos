@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.fasterxml.jackson.databind.JsonSerializable.Base;
 import com.heleno.todolist.user.IUserRepository;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
@@ -26,39 +25,49 @@ public class FilterTaskAuth extends OncePerRequestFilter{
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
         throws ServletException, IOException {
 
-        System.out.println("Chegou no filtro");
+        if (request.getServletPath().startsWith("/tasks")) {
 
-        var authorization = request.getHeader("Authorization").substring("basic".length()).trim();
+            System.out.println("Chegou no filtro");
 
-        byte[] authDecode = Base64.getDecoder().decode(authorization);
+            var authorization = request.getHeader("Authorization").substring("basic".length()).trim();
 
-        var authString = new String(authDecode);
+            byte[] authDecode = Base64.getDecoder().decode(authorization);
 
-        String[] credentials = authString.split(":");
+            var authString = new String(authDecode);
 
-        String username = credentials[0];
-        String password = credentials[1];
+            String[] credentials = authString.split(":");
 
-        var userExist = this.userRepository.findByUsername(username);
+            String username = credentials[0];
+            String password = credentials[1];
 
-        if(userExist == null){
+            var user = this.userRepository.findByUsername(username);
 
-          response.sendError(401);  
-
-        }else{
-
-            var passwordVerify = BCrypt.verifyer().verify(password.toCharArray(), userExist.getPassword());
-
-            if(passwordVerify.verified){
-
-                filterChain.doFilter(request, response);
-                
-            }else{
+            if (user == null) {
 
                 response.sendError(401);
+
+            } else {
+
+                var passwordVerify = BCrypt.verifyer().verify(password.toCharArray(), user.getPassword());
+
+                if (passwordVerify.verified) {
+
+                    request.setAttribute("idUser", user.getId());
+                    filterChain.doFilter(request, response);
+
+                } else {
+
+                    response.sendError(401);
+                }
+
             }
+        } else {
+
+            filterChain.doFilter(request, response);
 
         }
+
+        
 
 
 
