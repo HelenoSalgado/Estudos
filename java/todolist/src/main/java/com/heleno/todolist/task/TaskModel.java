@@ -20,7 +20,7 @@ public class TaskModel {
     private UUID id;
 
     @Column(length = 50)
-    private String Title;
+    private String title;
 
     private String description;
 
@@ -34,6 +34,15 @@ public class TaskModel {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    public void setTitle(String title) throws Exception {
+
+         if(title.length() > 50){
+            throw new Exception("O campo title deve ter no máximo 50 caracteres.");
+         }
+
+         this.title = title;
+    }
 
 
 }
